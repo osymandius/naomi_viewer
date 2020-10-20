@@ -15,26 +15,33 @@ viewer <- function() {
       br(),
       tabsetPanel(
         tabPanel(title="ART count",
+                 br(),
                  "Some note about how the years are summed to end of Q4",
                  plotOutput("art_count_plot")
                  ),
         tabPanel(title="ART sex ratio",
+                 br(),
                  textOutput("art_sex_plot_n"),
                  plotOutput("art_sex_plot")
         ),
         tabPanel(title="ART paeds ratio",
+                 br(),
                  plotOutput("art_paeds_plot")
         ),
         tabPanel(title="ANC count",
+                 br(),
                  plotOutput("anc_count_plot")
                  ),
         tabPanel(title="ANC prevalence",
+                 br(),
                  plotOutput("anc_prev_plot")
         ),
         tabPanel(title="ANC known positive",
+                 br(),
                  plotOutput("anc_known_plot")
         ),
         tabPanel(title="ANC ART coverage",
+                 br(),
                  plotOutput("anc_art_plot")
         )
       )

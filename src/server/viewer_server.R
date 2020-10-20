@@ -113,7 +113,6 @@ viewer_server <- function(input, output, session) {
               plot.title = element_text(size=16),
               axis.text = element_text(size = 12)
         )
-              # axis.text.x = element_text(angle = 45, hjust = 1))
 
     }, height = reactive(plot_height())
   )
@@ -126,14 +125,14 @@ viewer_server <- function(input, output, session) {
         ggplot(aes(year_labels(calendar_quarter_to_quarter_id(art()$calendar_quarter)), art_adult_sex_ratio, group = 1)) +
           geom_line() +
           geom_point() +
-          facet_wrap(~area_label, ncol = 6) +
+          facet_rep_wrap(~area_label, ncol = 6, repeat.tick.labels = c("left", "bottom")) +
           scale_y_continuous(labels = scales::label_number()) +
           theme_minimal() +
           labs(title = "Ratio of females-to-males among adults on ART", x = NULL, y = NULL) +
         theme(strip.text = element_text(face = "bold", size=13),
               plot.title = element_text(size=16),
-              axis.text = element_text(size = 12),
-              axis.text.x = element_text(angle = 45, hjust = 1))
+              axis.text = element_text(size = 12)
+        )
     }
     
   }, height = reactive(plot_height())
@@ -158,14 +157,14 @@ viewer_server <- function(input, output, session) {
     ggplot(art(), aes(year_labels(calendar_quarter_to_quarter_id(art()$calendar_quarter)), art_adult_child_ratio, group = 1)) +
       geom_line() +
       geom_point() +
-      facet_wrap(~area_label, ncol = 6) +
+      facet_rep_wrap(~area_label, ncol = 6, repeat.tick.labels = c("left", "bottom")) +
       scale_y_continuous(labels = scales::label_number()) +
       theme_minimal() +
       labs(title = "Ratio of children-to-adult on ART", x = NULL, y = NULL) +
       theme(strip.text = element_text(face = "bold", size=13),
             plot.title = element_text(size=16),
-            axis.text = element_text(size = 12),
-            axis.text.x = element_text(angle = 45, hjust = 1))
+            axis.text = element_text(size = 12)
+      )
     
   }, height = reactive(plot_height())
   )
@@ -175,15 +174,15 @@ viewer_server <- function(input, output, session) {
     ggplot(anc(), aes(year, anc_clients)) +
       geom_line() +
       geom_point() +
-      facet_wrap(~area_label, ncol = 6, scales = "free_y") +
+      facet_rep_wrap(~area_label, ncol = 6, scales = "free_y", repeat.tick.labels = c("left", "bottom")) +
       scale_y_continuous(labels = label_number()) +
       expand_limits(y = 0) +
       theme_minimal() +
       labs(title = "Number of ANC clients", x = NULL, y = NULL) +
       theme(strip.text = element_text(face = "bold", size=13),
             plot.title = element_text(size=16),
-            axis.text = element_text(size = 12),
-            axis.text.x = element_text(angle = 45, hjust = 1))
+            axis.text = element_text(size = 12)
+      )
     
   }, height = reactive(plot_height())
   )
@@ -193,14 +192,14 @@ viewer_server <- function(input, output, session) {
     ggplot(anc(), aes(year, anc_prevalence)) +
       geom_line() +
       geom_point() +
-      facet_wrap(~area_label, ncol = 6) +
+      facet_rep_wrap(~area_label, ncol = 6, repeat.tick.labels = c("left", "bottom")) +
       scale_y_continuous(labels = label_percent()) +
       theme_minimal() +
       labs(title = "HIV prevalence among ANC attendees", x = NULL, y = NULL) +
       theme(strip.text = element_text(face = "bold", size=13),
             plot.title = element_text(size=16),
-            axis.text = element_text(size = 12),
-            axis.text.x = element_text(angle = 45, hjust = 1))
+            axis.text = element_text(size = 12)
+      )
     
   }, height = reactive(plot_height())
   )
@@ -211,14 +210,14 @@ viewer_server <- function(input, output, session) {
       geom_hline(yintercept = 1.0, color = "grey30", linetype = "dashed") +
       geom_line() +
       geom_point() +
-      facet_wrap(~area_label, ncol = 6) +
+      facet_rep_wrap(~area_label, ncol = 6, repeat.tick.labels = c("left", "bottom")) +
       scale_y_continuous(labels = label_percent()) +
       theme_minimal() +
       labs(title = "Percentage of known positive already on ART", x = NULL, y = NULL) +
       theme(strip.text = element_text(face = "bold", size=13),
             plot.title = element_text(size=16),
-            axis.text = element_text(size = 12),
-            axis.text.x = element_text(angle = 45, hjust = 1))
+            axis.text = element_text(size = 12)
+      )
     
   }, height = reactive(plot_height())
   )
@@ -229,14 +228,14 @@ viewer_server <- function(input, output, session) {
       geom_hline(yintercept = 1.0, color = "grey30", linetype = "dashed") +
       geom_line() +
       geom_point() +
-      facet_wrap(~area_label, ncol = 6) +
+      facet_rep_wrap(~area_label, ncol = 6, repeat.tick.labels = c("left", "bottom")) +
       scale_y_continuous(labels = label_percent()) +
       theme_minimal() +
       labs(title = "ART coverage prior to first ANC visit", x = NULL, y = NULL) +
       theme(strip.text = element_text(face = "bold", size=13),
             plot.title = element_text(size=16),
-            axis.text = element_text(size = 12),
-            axis.text.x = element_text(angle = 45, hjust = 1))
+            axis.text = element_text(size = 12)
+      )
     
     }, height = reactive(plot_height())
   )
