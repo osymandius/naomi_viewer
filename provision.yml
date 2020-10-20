@@ -1,0 +1,14 @@
+packages:
+  - shiny
+  - ckanr
+  - getPass
+  - dplyr
+  - forcats
+  - ggplot2
+  - scales
+  - sf
+  - naomi
+  - lemon
+package_sources:
+  github:
+  - mrc-ide/naomi

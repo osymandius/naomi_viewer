@@ -7,6 +7,7 @@ library(ggplot2)
 library(scales)
 library(sf)
 library(naomi)
+library(lemon)
 
 source("src/server/introduction_server.R")
 source("src/server/viewer_server.R")
